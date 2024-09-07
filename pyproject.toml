@@ -1,0 +1,35 @@
+[build-system]
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "pet-protect-infra"
+description = "Infrastructure for the Pet Protect project"
+version = "0.0.0"
+authors = [{name = "Clément Dubos", email = "contact@cdubos.fr"}]
+readme = "README.md"
+requires-python = ">= 3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pet-protect-infra[typing]",
+    "pet-protect-infra[tests]",
+    "pet-protect-infra[docs]",
+]
+typing = ["mypy"]
+tests = [
+    "pytest",
+    "pytest-cov",
+    "pytest-lazy-fixture",
+]
+docs = [
+    "mkdocs",
+    "mkdocs-material",
+]
+
+[tool.flit.module]
+name = "pet_protect_infra"
+
+[tool.pdm]
+distribution = false

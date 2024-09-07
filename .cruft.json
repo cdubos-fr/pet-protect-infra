@@ -1,0 +1,19 @@
+{
+  "template": "https://github.com/cdubos-fr/cookiecutter-python",
+  "commit": "a9db31ced04c71dd8f46619932d228732406c332",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "python_version": "3.12",
+      "full_name": "Clément Dubos",
+      "email": "contact@cdubos.fr",
+      "project_name": "pet-protect-infra",
+      "project_slug": "pet_protect_infra",
+      "description": "Infrastructure for the Pet Protect project",
+      "version": "0.0.0",
+      "is_file_module": false,
+      "_template": "https://github.com/cdubos-fr/cookiecutter-python"
+    }
+  },
+  "directory": null
+}
