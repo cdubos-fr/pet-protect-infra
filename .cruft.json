@@ -9,11 +9,14 @@
       "email": "contact@cdubos.fr",
       "project_name": "pet-protect-infra",
       "project_slug": "pet_protect_infra",
-      "description": "Infrastructure for the Pet Protect project",
+      "description": "Infrastructure for the Pet Protect project.",
       "version": "0.0.0",
       "is_file_module": false,
       "_template": "https://github.com/cdubos-fr/cookiecutter-python"
     }
   },
-  "directory": null
+  "directory": null,
+  "skip": [
+    ".git"
+  ]
 }
