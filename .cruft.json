@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/cdubos-fr/cookiecutter-python",
-  "commit": "a9db31ced04c71dd8f46619932d228732406c332",
+  "commit": "8c50844ff8f258240491d56b1fd9766361541979",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -9,11 +9,14 @@
       "email": "contact@cdubos.fr",
       "project_name": "pet-protect-infra",
       "project_slug": "pet_protect_infra",
-      "description": "Infrastructure for the Pet Protect project",
+      "description": "Infrastructure for the Pet Protect project.",
       "version": "0.0.0",
       "is_file_module": false,
       "_template": "https://github.com/cdubos-fr/cookiecutter-python"
     }
   },
-  "directory": null
+  "directory": null,
+  "skip": [
+    ".git"
+  ]
 }

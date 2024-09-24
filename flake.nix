@@ -26,11 +26,16 @@
         let
           python = pkgs.python312;
           getAttrsValue = name: value: value;
+          dev-packages = import ./nix/dev.nix {
+            pkgs = pkgs;
+            python = python;
+            pyproject = pyproject-nix;
+          };
         in
         {
           packages.default =
             let
-              project = pyproject-nix.lib.project.loadPyproject {
+              project = pyproject-nix.lib.project.loadPDMPyproject {
                 projectRoot = ./.;
               };
               attrs = project.renderers.buildPythonPackage { inherit python; };
@@ -42,12 +47,12 @@
               dev-packages = import ./nix/dev.nix {
                 pkgs = pkgs;
                 python = python;
+                pyproject = pyproject-nix;
               };
             in
             {
               default = pkgs.mkShell {
                 name = "pet-protect-infra-dev-env";
-                # The Nix packages provided in the environment
                 packages = (pkgs.lib.attrsets.mapAttrsToList getAttrsValue dev-packages);
                 shellHook = ''
                   just devenv
@@ -60,6 +65,7 @@
                   ci-packages = import ./nix/ci.nix {
                     pkgs = pkgs;
                     python = python;
+                    pyproject = pyproject-nix;
                   };
                   tox-project = pyproject-nix.lib.project.loadPyproject {
                     projectRoot = pkgs.fetchFromGitHub {
@@ -74,7 +80,6 @@
                 in
                 pkgs.mkShell {
                   name = "pet-protect-infra-ci-env";
-                  # The Nix packages provided in the environment
                   packages = (pkgs.lib.attrsets.mapAttrsToList getAttrsValue ci-packages) ++ [ tox-gh ];
                 };
             };
