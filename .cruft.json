@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/cdubos-fr/cookiecutter-python",
-  "commit": "a9db31ced04c71dd8f46619932d228732406c332",
+  "commit": "8c50844ff8f258240491d56b1fd9766361541979",
   "checkout": null,
   "context": {
     "cookiecutter": {
